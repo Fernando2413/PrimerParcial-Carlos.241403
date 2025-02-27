@@ -1,0 +1,24 @@
+﻿@model PrimerParcial.Models.NumeroModel
+@{
+    ViewData["Title"] = "Calcular";
+}
+<div>
+    <h1>Calculadora de Numero al Azar</h1>
+    <p>Introduzca dos numeros que correspondan al limite inferior y superior de un rango de numeros, con el fin de generar un numero al azar que pertenezca a dicho rango. <a> Ambos limites son Inclusivos</a></a></p>
+    <form asp-controller="Numero" asp-action="NumRand">
+        <table>
+            <tr>
+                <td><label>Numero Minimo</label></td>
+                <td><input asp-for="Num1"></td>
+            </tr>
+            <tr>
+                <td><label>Numero Maximo</label></td>
+                <td><input asp-for="Num2"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Generar"></td>
+            </tr>
+        </table>
+    </form>
+    <p>@Html.DisplayTextFor(model => model.Resultado)</p>
+</div>
